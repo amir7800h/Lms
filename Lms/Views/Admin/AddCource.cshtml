@@ -1,0 +1,63 @@
+﻿@model Lms.Models.Entities.Course;
+
+@{
+    ViewData["Title"] = "AddCource";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="m-2">
+
+    <h3>افزودن درس</h3>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <div class="col-8">
+            <div>
+                @if (@ViewBag.ResultMessage != null)
+                {
+                    <div class="alert alert-success">
+                        @ViewBag.ResultMessage
+                    </div>
+                }
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <form class="form container" asp-action="AddCource" asp-controller="Admin" method="post" autocomplete="off">
+
+                    <div class="form-group">
+                        <label asp-for="Name">نام درس</label>
+                        <input type="text" class="form-control" asp-for="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="College">دانشکده</label>
+                        <input type="text" class="form-control" asp-for="College">
+                        <span asp-validation-for="College" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="MasterId">استاد</label>
+                        <select class="form-control" asp-for="MasterId" asp-items="@ViewBag.Masters"></select>
+                        <span asp-validation-for="MasterId" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-success col-6">ثبت درس</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .form-group {
+        margin-top: 20px;
+    }
+
+</style>
+

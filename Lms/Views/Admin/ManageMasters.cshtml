@@ -1,0 +1,115 @@
+﻿@using Lms.Models.Authentication;
+@model List<MasterViewModel>
+@{
+    ViewData["Title"] = "ManageMasters";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    int Count = 1;
+}
+
+<div class="m-3">
+    <h3>مدیریت اساتید</h3>
+    <hr />
+    <div class="container">
+        @if (Model.Count > 0)
+        {
+            <table class="table table-bordered table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">دانشکده</th>
+                        <th scope="col">نام و نام خانوادگی</th>
+                        <th scope="col">نام کاربری</th>
+                        <th scope="col">عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count(); i++)
+                    {
+                        <tr>
+                            <th scope="row">#@Count</th>
+                            <td>@Model[i].Collage</td>
+                            <td>@Model[i].FullName</td>
+                            <td>@Model[i].UserName</td>
+                            <td>
+                                @{
+                                    string id = "'" + Model[i].Id + "'";
+                                    <button asp-action="masterdelete" onclick="remove(@id)" class="btn btn-outline-danger ">حذف</button>
+
+                                }
+                                <a asp-action="editmasters" asp-route-Id="@Model[i].Id" class="btn btn-outline-primary mx-1">ویرایش</a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            @{
+                                Count++;
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+       
+
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+
+        function remove(id) {
+
+            var data = new FormData()
+            data.append("Id", id)
+
+
+            swal.fire({
+                title: 'آیا مطمئنید؟',
+                text: "از حذف این کاربر",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'بله حذف شود',
+                cancelButtonText: 'لغو',
+            }).then(function (isConfirm) {
+
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    url: "MasterDelete",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (data) {
+
+                        if (data.isSuccess == true) {
+                            swal.fire(
+                                'موفق!',
+                                'حذف کاربر صورت گرفت',
+                                'success'
+                            ).then(function (isConfirm) {
+                                window.location.href = "/Admin/ManageMasters";
+                            });
+                        }
+                        else {
+                            swal.fire(
+                                'هشدار!',
+                                'عملیات با خطا مواجه شد',
+                                'warning'
+                            );
+                        }
+
+                    },
+
+                });
+            })
+
+        }
+
+    </script>
+}
+
+
+

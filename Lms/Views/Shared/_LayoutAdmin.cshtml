@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/bootstrap.rtl.min.css" asp-append-version="true">
+    <link href="~/lib/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <title>سامانه آموزش مجازی</title>
+</head>
+<body dir="rtl" class="bg-light">
+
+
+    <div class="d-flex">
+        <div style="width:250px">
+            <div class="flex-shrink-0 p-3 bg-white " style="height:100vh">
+                <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                    <span class="fs-5 fw-semibold">پنل مدیریت</span>
+                </a>
+                <ul class="list-unstyled ps-0 list-group">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed btn" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                            مدیریت دروس
+                        </button>
+                        <div class="collapse" id="home-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="AddCource" class="link-dark rounded ">افزودن درس</a></li>
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="ManageCource" class="link-dark rounded ">مشاهده دروس</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                            مدیریت اساتید
+                        </button>
+                        <div class="collapse" id="dashboard-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="addmaster" class="link-dark rounded">اضافه کردن استاد</a></li>
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="managemasters" class="link-dark rounded">مشاهده اساتید</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                            مدیریت دانشجویان
+                        </button>
+                        <div class="collapse" id="orders-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="addstudent" class="link-dark rounded">اضافه کردن دانشجو</a></li>
+                                <li class="buttons btn"><a asp-controller="admin" asp-action="managestudent" class="link-dark rounded">مشاهده دانشجویان</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9 m-5 card">
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/Sweetalert2/sweetalert2.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .btn.btn-toggle {
+        font-size: 20px;
+        color: black
+    }
+
+    a.link-dark {
+        font-size: 14px;
+    }
+
+    .buttons {
+        margin-right: 30px;
+        margin-bottom: 1px;
+        color: #818787;
+    }
+
+    a.link-dark:hover {
+        color: #0f8d8d;
+    }
+
+</style>
+
+

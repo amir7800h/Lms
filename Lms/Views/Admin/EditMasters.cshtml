@@ -1,0 +1,118 @@
+﻿@model Lms.Models.Authentication.MasterViewModel;
+@{
+    ViewData["Title"] = "EditMasters";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="m-2">
+
+    <h3>ویرایش استاد</h3>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <div class="col-8">
+            <div>
+                @if (@ViewBag.Result != null)
+                {
+                    <div class="alert alert-success">
+                        @ViewBag.Result
+                    </div>
+                }
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <form class="form container" asp-action="editmasters" asp-controller="Admin" method="post" autocomplete="off">
+
+                    <div class="form-group">
+                        <label asp-for="FullName">نام و نام خانوادگی</label>
+                        <input type="text" class="form-control" asp-for="FullName">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UserName">نام کاربری</label>
+                        <input type="text" class="form-control" asp-for="UserName">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password">رمز عبور</label>
+                        <input type="password" class="form-control" asp-for="Password">
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Collage">نام دانشکده</label>
+                        <input type="text" class="form-control" asp-for="Collage">
+
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-warning col-6">ویرایش استاد</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <link href="~/lib/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="~/lib/Sweetalert2/sweetalert2.min.js"></script>
+
+
+    <script>
+        //Swal.fire('Any fool can use a computer')
+
+        //data = {
+        //    FullName: "amir"
+        //}
+
+        //var ajaxRequest = $.ajax({
+        //    type: "POST",
+        //    url: "AddMaster",
+        //    contentType: false,
+        //    processData: false,
+        //    data: data,
+        //    success: function (data) {
+
+        //        if (data.isSuccess == true) {
+        //            swal.fire(
+        //                'موفق!',
+        //                data.message,
+        //                'success'
+        //            ).then(function (isConfirm) {
+        //                window.location.href = "/Admin/Products/";
+        //            });
+        //        }
+        //        else {
+        //            swal.fire(
+        //                'هشدار!',
+        //                data.message,
+        //                'warning'
+        //            );
+        //        }
+
+        //    },
+        //    error: function (xhr, ajaxOptions, thrownError) {
+        //        alert(xhr.status);
+        //        alert(thrownError);
+        //    }
+
+        //});
+
+
+
+
+
+    </script>
+
+}
+
+
+
+    <style>
+        .form-group {
+            margin-top: 20px;
+        }
+
+    </style>

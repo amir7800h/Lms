@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lms", "Lms\Lms.csproj", "{94C18074-3831-4683-8525-79E3D8744CE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94C18074-3831-4683-8525-79E3D8744CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C18074-3831-4683-8525-79E3D8744CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C18074-3831-4683-8525-79E3D8744CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C18074-3831-4683-8525-79E3D8744CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {948ACFBA-1F6D-4B2D-B4D5-3C7B65FD15D8}
+	EndGlobalSection
+EndGlobal

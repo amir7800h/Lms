@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Vazir;
+    src: url("../fonts/Vazir/Vazirmatn-Medium.woff2")format("woff2");
+}
+
+
+*{
+    font-family: Vazir;
+}
+
+body{
+    background-color: rgb(246, 246, 246);
+    direction: rtl;
+}
+
+header, footer{
+  background-color: #0f1959;  
+}
+
+footer{
+    height: 60px;
+}
+
+main, #mainDiv  {
+    min-height: 800px;
+    font-weight: 900;
+}

@@ -1,0 +1,42 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/bootstrap.rtl.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <title>سامانه آموزش مجازی</title>
+</head>
+
+<body>
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <a href="#" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+                <img src="~/img/header.png" alt="">
+
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+         @RenderBody()
+    </main>
+
+    <footer class="border-top mt-4 d-flex align-items-center">
+        <div class="container">
+            <p class="text-white">کلیه حقوق این پایگاه متعلق به مرکز فناوری اطلاعات و ارتباطات دانشگاه اصفهان می باشد.
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src=~/lib/sweet-alert/sweetalert.min></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+
+
+</html>
