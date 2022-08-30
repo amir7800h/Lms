@@ -1,6 +1,7 @@
 ﻿using Lms.Context;
 using Lms.Models.Authentication;
 using Lms.Models.Entities;
+using Lms.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -444,7 +445,7 @@ namespace Lms.Controllers
                 context.SaveChanges();
 
                 return Redirect("~/admin/AddCource?isSuccess=true");
-                
+
 
             }
             catch (Exception ex)
@@ -458,16 +459,21 @@ namespace Lms.Controllers
         {
             try
             {
-                List<MasterViewModel> masters = _userManager.GetUsersInRoleAsync("MASTER").Result
-                    .Select(x => new MasterViewModel()
+                List<CourseViewModel> courses = context.Courses
+                    .Select(x => new CourseViewModel
                     {
-                        Collage = x.College,
-                        FullName = x.FullName,
+                        College = x.College,
+                        Name = x.Name,
+                        MasterId = x.MasterId,
                         Id = x.Id,
-                        UserName = x.UserName,
                     }).ToList();
 
-                return View(masters);
+                foreach (var item in courses)
+                {
+                    item.MasterName = "استاد " + _userManager.FindByIdAsync(item.MasterId.ToString()).Result.FullName;
+                }
+
+                return View(courses);
             }
             catch (Exception ex)
             {
@@ -475,23 +481,34 @@ namespace Lms.Controllers
             }
 
         }
-        public IActionResult EditCource(string Id, bool? isSuccess)
+        public IActionResult EditCource(int Id, bool? isSuccess)
         {
             try
             {
-                User master = _userManager.FindByIdAsync(Id).Result;
-                MasterViewModel model = new MasterViewModel()
+
+                var course = context.Courses.SingleOrDefault(x => x.Id == Id);
+                var masters = _userManager.GetUsersInRoleAsync("MASTER").Result
+                    .Select(x => new Masters
+                    {
+                        Id = x.Id,
+                        Name = x.FullName,
+                    }).ToList();
+                var model = new CourseEditViewModel()
                 {
-                    Collage = master.College,
-                    FullName = master.FullName,
-                    Id = master.Id,
-                    Password = "",
-                    UserName = master.UserName,
+                    Id = course.Id,
+                    College = course.College,
+                    MasterId = course.MasterId,
+                    Name = course.Name,
+                    Masters = masters
                 };
+
                 if (isSuccess != null)
                 {
-                    ViewBag.Result = "ویرایش استاد با موفقیت صورت گرفت";
+                    ViewBag.ResultMessageEditCourse = "ویرایش درس با موفقیت صورت گرفت";
                 }
+
+                //ViewBag.Masters = new SelectList(masters, "Id", "Name");
+                ViewBag.Masters = masters;
                 return View(model);
             }
             catch (Exception ex)
@@ -501,52 +518,25 @@ namespace Lms.Controllers
 
         }
         [HttpPost]
-        public IActionResult EditCource(MasterViewModel model)
+        public IActionResult EditCource(CourseEditViewModel model)
         {
             try
             {
 
-                User master = _userManager.FindByIdAsync(model.Id).Result;
+                var course = context.Courses.SingleOrDefault(x => x.Id == model.Id);
 
-                if (!String.IsNullOrWhiteSpace(model.FullName))
-                    master.FullName = model.FullName;
+                if (!String.IsNullOrWhiteSpace(model.Name))
+                    course.Name = model.Name;
 
-                if (!String.IsNullOrWhiteSpace(model.Collage))
-                    master.College = model.Collage;
+                if (!String.IsNullOrWhiteSpace(model.College))
+                    course.College = model.College;
 
+                if (!String.IsNullOrWhiteSpace(model.MasterId.ToString()))
+                    course.MasterId = model.MasterId;
 
-                if (!String.IsNullOrWhiteSpace(model.UserName))
-                    master.UserName = model.UserName;
+                context.SaveChanges();
 
-
-                if (!String.IsNullOrWhiteSpace(model.Password))
-                {
-                    var token = _userManager.GeneratePasswordResetTokenAsync(master).Result;
-                    var result = _userManager.ResetPasswordAsync(master, token, model.Password).Result;
-                    if (!result.Succeeded)
-                    {
-                        foreach (var item in result.Errors)
-                        {
-                            ModelState.AddModelError("", item.Description);
-                        }
-                        return View();
-                    }
-                }
-
-                var resultUpdate = _userManager.UpdateAsync(master).Result;
-                if (resultUpdate.Succeeded)
-                {
-                    return Redirect($"~/admin/EditMasters?isSuccess=true&id={model.Id}");
-                }
-                else
-                {
-                    foreach (var item in resultUpdate.Errors)
-                    {
-                        ModelState.AddModelError("", item.Description);
-                    }
-                    return View();
-                }
-
+                return Redirect($"~/admin/EditCource?isSuccess=true&id={model.Id}");
 
             }
             catch (Exception ex)
@@ -556,7 +546,7 @@ namespace Lms.Controllers
 
         }
         [HttpPost]
-        public async Task<JsonResult> MasterCource(string Id)
+        public async Task<JsonResult> DeleteCource(string Id)
         {
             try
             {

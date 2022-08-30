@@ -1,26 +1,26 @@
-﻿@model Lms.Models.Entities.Course;
+﻿@model Lms.Models.ViewModels.CourseEditViewModel;
 
 @{
-    ViewData["Title"] = "AddCource";
+    ViewData["Title"] = "EditCource";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <div class="m-2">
 
-    <h3>افزودن درس</h3>
+    <h3>ویرایش درس</h3>
     <hr />
     <div class="d-flex justify-content-center">
         <div class="col-8">
             <div>
-                @if (@ViewBag.ResultMessage != null)
+                @if (@ViewBag.ResultMessageEditCourse != null)
                 {
                     <div class="alert alert-success">
-                        @ViewBag.ResultMessage
+                        @ViewBag.ResultMessageEditCourse
                     </div>
                 }
                 <div asp-validation-summary="ModelOnly" class="text-danger">
                 </div>
-                <form class="form container" asp-action="AddCource" asp-controller="Admin" method="post" autocomplete="off">
+                <form class="form container" asp-action="EditCource" asp-controller="Admin" method="post" autocomplete="off">
 
                     <div class="form-group">
                         <label asp-for="Name">نام درس</label>
@@ -38,13 +38,25 @@
 
                     <div class="form-group">
                         <label asp-for="MasterId">استاد</label>
-                        <select class="form-control" asp-for="MasterId" asp-items="@ViewBag.Masters"></select>
+                        <select class="form-control" asp-for="MasterId" >
+                            @foreach(var item in Model.Masters)
+                            {
+                                if(item.Id == Model.MasterId.ToString())
+                                {
+                                    <option selected value="@item.Id">@item.Name</option>
+                                }
+                                else{
+                                    <option  value="@item.Id">@item.Name</option>
+
+                                }
+                            }
+                        </select>
                         <span asp-validation-for="MasterId" class="text-danger"></span>
 
                     </div>
-
+                    <input type="hidden" asp-for="Id" />
                     <div class="d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-success col-6">ثبت درس</button>
+                        <button type="submit" class="btn btn-success col-6">ویرایش درس</button>
                     </div>
 
                 </form>
@@ -60,5 +72,4 @@
     }
 
 </style>
-
 
