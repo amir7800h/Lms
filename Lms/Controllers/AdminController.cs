@@ -507,7 +507,6 @@ namespace Lms.Controllers
                     ViewBag.ResultMessageEditCourse = "ویرایش درس با موفقیت صورت گرفت";
                 }
 
-                //ViewBag.Masters = new SelectList(masters, "Id", "Name");
                 ViewBag.Masters = masters;
                 return View(model);
             }

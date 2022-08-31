@@ -8,101 +8,101 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Lms
 build_property.RootNamespace = Lms
-build_property.ProjectDir = D:\Repos\Lms\Lms\
+build_property.ProjectDir = D:\Repos\lms\Lms\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Repos\Lms\Lms
+build_property.MSBuildProjectDirectory = D:\Repos\lms\Lms
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Repos/Lms/Lms/Views/Admin/AddCource.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/AddCource.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ291cmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/AddMaster.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/AddMaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkTWFzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/AddStudent.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/EditCource.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/EditCource.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENvdXJjZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/EditMasters.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/EditMasters.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdE1hc3RlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/EditStudent.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/EditStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFN0dWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/Index.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/ManageCource.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/ManageCource.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ291cmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/ManageMasters.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/ManageMasters.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlTWFzdGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Admin/ManageStudent.cshtml]
+[D:/Repos/lms/Lms/Views/Admin/ManageStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Authentication/AccessDenied.cshtml]
+[D:/Repos/lms/Lms/Views/Authentication/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Authentication/Signin.cshtml]
+[D:/Repos/lms/Lms/Views/Authentication/Signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU2lnbmluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Home/Admin.cshtml]
+[D:/Repos/lms/Lms/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Home/Index.cshtml]
+[D:/Repos/lms/Lms/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Home/Master.cshtml]
+[D:/Repos/lms/Lms/Views/Home/Master.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Home/Privacy.cshtml]
+[D:/Repos/lms/Lms/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Master/Index.cshtml]
+[D:/Repos/lms/Lms/Views/Master/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Shared/Error.cshtml]
+[D:/Repos/lms/Lms/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Shared/_LayoutAdmin.cshtml]
+[D:/Repos/lms/Lms/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Repos/lms/Lms/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/_ViewImports.cshtml]
+[D:/Repos/lms/Lms/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/_ViewStart.cshtml]
+[D:/Repos/lms/Lms/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Repos/Lms/Lms/Views/Shared/_Layout.cshtml]
+[D:/Repos/lms/Lms/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1rao7goxsv
